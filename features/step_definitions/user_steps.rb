@@ -34,6 +34,7 @@ end
 Then(/^I should be signed up$/) do
   user = User.find_by_email('ecomba@makersacademy.com')
   expect(user).not_to be_nil
+  expect(page).to have_content("Welcome! You have signed up successfully. Sign in below to get started!")
 end
 
 Then(/^I should still be on the homepage$/) do
@@ -42,4 +43,8 @@ end
 
 Then(/^I should be on the count page$/) do
   expect(current_path).to eq(count_path)
+end
+
+Then(/^I should see a welcome message$/) do
+  expect(page).to have_content("Signed in successfully.")
 end
