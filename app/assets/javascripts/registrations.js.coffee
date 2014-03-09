@@ -16,4 +16,12 @@ $(document).ajaxSuccess (e, data, status, xhr) ->
       <p class="sign-up-message">Welcome! You have signed up successfully. Sign in below to get started!</p>
       """
   else
-    console.log 'failure!'
+    console.log e
+    console.log data
+    console.log status
+    console.log xhr
+    for message in xhr.data
+      do (message) ->
+        $('body').prepend("""
+          <p>#{message}</p>
+        """)

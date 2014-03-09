@@ -16,7 +16,7 @@ class RegistrationsController < Devise::RegistrationsController
       else
         clean_up_passwords resource
         # respond_with resource
-        return render json: { success: false }
+        return render json: { success: false, data: resource.errors.full_messages }
       end
     else
       build_resource(sign_up_params)
