@@ -56,11 +56,11 @@ end
 Then(/^I should be signed up$/) do
   user = User.find_by_email('ecomba@makersacademy.com')
   expect(user).not_to be_nil
-  expect(page).to have_content("Welcome! You have signed up successfully. Sign in below to get started!")
+  expect(page).to have_content("Welcome! You have signed up successfully. Sign in to get started!")
 end
 
 Then(/^I should have been signed up$/) do
-  expect(page).to have_content("Welcome! You have signed up successfully. Sign in below to get started!")
+  expect(page).to have_content("Welcome! You have signed up successfully. Sign in to get started!")
 end
 
 Then(/^I should still be on the homepage$/) do
