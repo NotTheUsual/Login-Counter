@@ -21,3 +21,11 @@ $(document).ajaxSuccess (e, data, status, xhr) ->
         $('body').prepend("""
           <p>#{message}</p>
         """)
+  else if xhr.session_success
+    console.log 'Success!'
+    window.location = 'http://localhost:3000/count'
+  else if xhr.session_success == false
+    $('body').prepend("""
+          <p>#{xhr.error}</p>
+        """)
+

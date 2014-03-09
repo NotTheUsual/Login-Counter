@@ -19,7 +19,7 @@
 
 <h2>Sign in</h2>
 
-<%= form_for(resource, :as => resource_name, :url => session_path(resource_name), html: { id: 'new_user_session' }) do |f| %>
+<%= form_for(resource, :as => resource_name, :url => session_path(resource_name), html: { id: 'new_user_session' }, format: :json, remote: true) do |f| %>
   <div><%= f.label :email %><br />
   <%= f.email_field :email, :autofocus => true %></div>
 
