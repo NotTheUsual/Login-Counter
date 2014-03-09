@@ -11,7 +11,7 @@ Feature: Login Count
     When I sign in for the first time
     Then I should see a count of 1
 
-  Scenario: Loggin in twice
+  Scenario: Logging in twice
     Given I have signed in
     And I have signed out
     And I have signed in again

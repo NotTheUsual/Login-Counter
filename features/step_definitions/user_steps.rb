@@ -59,6 +59,10 @@ Then(/^I should be signed up$/) do
   expect(page).to have_content("Welcome! You have signed up successfully. Sign in below to get started!")
 end
 
+Then(/^I should have been signed up$/) do
+  expect(page).to have_content("Welcome! You have signed up successfully. Sign in below to get started!")
+end
+
 Then(/^I should still be on the homepage$/) do
   expect(current_path).to eq(root_path)
 end
