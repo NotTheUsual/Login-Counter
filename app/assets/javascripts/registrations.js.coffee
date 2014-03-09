@@ -26,6 +26,6 @@ $(document).ajaxSuccess (e, data, status, xhr) ->
     window.location = 'http://localhost:3000/count'
   else if xhr.session_success == false
     $('body').prepend("""
-          <p>#{xhr.error}</p>
-        """)
+      <p>#{xhr.error}</p>
+    """)
 
