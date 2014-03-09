@@ -6,4 +6,10 @@ Feature: User signs up
   Scenario: from a sign up page
     Given I am on the sign up page
     When I fill out the sign up form
-    Then I should be signed up 
+    Then I should be signed up
+
+  Scenario: from the homepage
+    Given I am on the homepage
+    When I fill out the sign up form
+    Then I should still be on the homepage
+    And I should be signed up
