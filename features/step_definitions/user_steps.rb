@@ -14,6 +14,19 @@ Given(/^I am a registered user$/) do
   click_button 'Sign up'
 end
 
+Given(/^(?:I have signed in|I have signed in again)$/) do
+  visit root_path
+  within '#new_user_session' do
+    fill_in 'Email', with: 'ecomba@makersacademy.com'
+    fill_in 'Password', with: 'password1'
+    click_button 'Sign in'
+  end
+end
+
+Given(/^I have signed out$/) do
+  click_link 'Sign out'
+end
+
 When(/^I fill out the sign up form$/) do
   within '#new_user' do
     fill_in 'Email', with: 'ecomba@makersacademy.com'
@@ -23,13 +36,22 @@ When(/^I fill out the sign up form$/) do
   end
 end
 
-When(/^I fill out the sign in form$/) do
+When(/^(?:I fill out the sign in form|I sign in for the first time)$/) do
   within '#new_user_session' do
     fill_in 'Email', with: 'ecomba@makersacademy.com'
     fill_in 'Password', with: 'password1'
     click_button 'Sign in'
   end
 end
+
+# When(/^I have signed in twice$/) do
+#   visit root_path
+#   within '#new_user_session' do
+#     fill_in 'Email', with: 'ecomba@makersacademy.com'
+#     fill_in 'Password', with: 'password1'
+#     click_button 'Sign in'
+#   end
+# end
 
 Then(/^I should be signed up$/) do
   user = User.find_by_email('ecomba@makersacademy.com')
@@ -47,4 +69,8 @@ end
 
 Then(/^I should see a welcome message$/) do
   expect(page).to have_content("Signed in successfully.")
+end
+
+Then(/^I should see a count of (\d+)$/) do |count|
+  expect(page).to have_content(count)
 end
