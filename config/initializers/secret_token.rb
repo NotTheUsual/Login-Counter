@@ -9,4 +9,11 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-LoginCounter::Application.config.secret_key_base = '20d0e17ca1beffc27aff1127d7667dec5cf3a8cabc7e9dd1cb045bdddd34ee73d5c83552f566d98fc33457655b0c7488a3f45b2f2a73438c515276d0d67b2db3'
+# LoginCounter::Application.config.secret_key_base = '20d0e17ca1beffc27aff1127d7667dec5cf3a8cabc7e9dd1cb045bdddd34ee73d5c83552f566d98fc33457655b0c7488a3f45b2f2a73438c515276d0d67b2db3'
+
+secret = ENV['MYAPP_SECRET']
+if secret.nil? || secret.length < 30
+  puts "Secret token cannot be loaded"
+else
+  LoginCounter::Application.config.secret_key_base = secret
+end

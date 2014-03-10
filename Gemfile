@@ -37,6 +37,7 @@ end
 group :development, :test do
   gem 'rspec-rails'
   gem 'poltergeist'
+  gem 'foreman'
 end
 
 group :test do
