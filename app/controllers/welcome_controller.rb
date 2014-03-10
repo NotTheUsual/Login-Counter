@@ -1,5 +1,6 @@
 class WelcomeController < ApplicationController
   def index
+    redirect_to count_path if current_user
   end
 
   def count

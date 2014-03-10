@@ -16,16 +16,18 @@ $(document).ajaxSuccess (e, data, status, xhr) ->
       <p class="sign-up-message">Welcome! You have signed up successfully. Sign in to get started!</p>
       """
   else if xhr.registration_success == false
+    $('#error-messages').html('')
     for message in xhr.data
       do (message) ->
-        $('body').prepend("""
-          <p>#{message}</p>
+        $('#error-messages').prepend("""
+          <li class="error">#{message}</li>
         """)
   else if xhr.session_success
     console.log 'Success!'
     window.location = 'http://localhost:3000/count'
   else if xhr.session_success == false
-    $('body').prepend("""
-      <p>#{xhr.error}</p>
+    $('#error-messages').html('')
+    $('#error-messages').prepend("""
+      <li>#{xhr.error}</li>
     """)
 

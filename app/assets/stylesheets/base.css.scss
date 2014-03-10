@@ -1,0 +1,139 @@
+$main-color: #722395;
+
+* { box-sizing: border-box; }
+
+body {
+  font-family: sans-serif;
+  background-color: $main-color;
+  color: #fff;
+  font-size: 100%;
+  text-align: center;
+}
+
+h1 {
+  font-size: 4em;
+  display: block;
+  margin-top: 0.4em;
+  margin-bottom: 0.5em;
+  font-weight: bold;
+  color: #fff;
+  margin-left: -450px;
+}
+
+.description {
+  width: 800px;
+  background-color: #fafafa;
+  color: #333;
+  font-size: 1.4em;
+  line-height: 1.4em;
+  padding: 1em;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+}
+
+.sign-in, .sign-up {
+  width: 390px;
+  background-color: #fafafa;
+  color: #333;
+  display: inline-block;
+  vertical-align: text-top;
+  font-size: 1.5em;
+  text-align: left;
+  padding: 0.75em;
+  
+  h2 {
+    font-weight: bold;
+    color: $main-color;
+    margin-bottom: 0.75em;
+  }
+  
+  form {
+    width: 100%;
+  }
+  
+  label {
+    font-size: 0.9em;
+  }
+  
+  input[type=email], input[type=password] {
+    width: 100%;
+    font-size: 1em;
+    padding: 0.25em;
+    margin-top: 0.25em;
+    margin-bottom: 0.5em;
+    border: 1px solid $main-color;
+    
+    &:focus {
+      outline: none;
+      outline: 2px solid $main-color;
+    }
+  }
+  
+  input[type=checkbox] {
+    margin-left: 1em;
+    font-size: 1em;
+    position: relative;
+    bottom: 2px;
+  }
+}
+
+.sign-up {
+  margin-right: 20px;
+}
+
+.button {
+  border: 0;
+  padding: 0.5em 0.75em;
+  font-size: 0.75em;
+  background-color: $main-color;
+  color: #fff;
+  cursor: pointer;
+  margin-left: 74%;
+  
+  &:hover {
+    background-color: lighten($main-color, 5%);
+  }
+  
+  &:active, &:focus {
+    outline: none;
+    background-color: darken($main-color, 5%);
+  }
+}
+
+#error-messages {
+  position: absolute;
+  top: 1em;
+  left: 50%;
+  
+  li {
+    background-color: darken($main-color, 10%);
+    width: 400px;
+    padding: 0.75em;
+    margin-bottom: 0.25em;
+  }
+}
+
+.notice, .alert {
+  position: absolute;
+  top: 1em;
+  left: 50%;
+  background-color: darken($main-color, 10%);
+  width: 400px;
+  padding: 0.75em;
+  margin-bottom: 0.25em;
+}
+
+.big-number {
+  font-size: 30em;
+  margin-bottom: 0.2em;
+}
+
+body > a {
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+  
+  &:hover {
+    text-decoration: underline;
+  }
+}
