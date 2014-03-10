@@ -24,7 +24,7 @@ $(document).ajaxSuccess (e, data, status, xhr) ->
         """)
   else if xhr.session_success
     console.log 'Success!'
-    window.location = 'http://localhost:3000/count'
+    window.location = '/count'
   else if xhr.session_success == false
     $('#error-messages').html('')
     $('#error-messages').prepend("""
