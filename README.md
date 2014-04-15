@@ -12,7 +12,7 @@ It will have the following functionality:
 - The user should be able to log in after it has signed up. A successful login will redirect to another page that will show the count of how many times the user has logged in
 - An unsuccessful login will show an error message without reloading the page
 - This page will have a log out button or link. If the user clicks it, it will show a message saying goodbye
-- If a user is already logged it, the home page should automatically redirect to the logged in page
+- If a user is already logged in, the home page should automatically redirect to the logged in page
 
 Implementation:
 - Please have acceptance tests for the app. Write them first
@@ -21,3 +21,5 @@ Implementation:
 - Validate your CSS with http://jigsaw.w3.org/css-validator/. Try to fix the errors it may show
 - Validate your JS with http://www.jslint.com/. Try to fix the errors it may show
 - Finally, make your app look good. It's just a couple of pages with the most basic functionality. Make an attempt at web design but don't overcomplicate it
+
+And I'm pretty sure the app does all of this now (we still haven't received any feedback...). There's a slight issue wit HTML validation (the two forms share an ID) but I ran out of time to change it, and everything else is in order.
